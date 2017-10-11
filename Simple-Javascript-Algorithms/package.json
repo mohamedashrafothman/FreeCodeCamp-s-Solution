@@ -1,0 +1,19 @@
+{
+  "name": "Simple-Javascript-Algorithms",
+  "devDependencies": {
+    "mocha": "^4.0.1"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "Mohamed Ashraf",
+  "license": "ISC",
+  "description": ""
+}
