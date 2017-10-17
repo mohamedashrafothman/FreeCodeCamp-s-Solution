@@ -9,31 +9,33 @@
 	  in "line" are present in "Alien".
 */
 
-(function(){
+const assert = require('assert');
 
-	function mutation(arr) {
-	  arr.sort(function(a,b){
-	    return a.length - b.length;
-	  });
-	  
-	  return arr[0].toLowerCase().split("").every(function(x){
-	    if(arr[1].toLowerCase().indexOf(x) === -1){
-	      return false;
-	    } else {
-	      return true;
-	    }
-	  });
-	}
+describe('Multations', ()=> {
+	it('returns true if string in the first element of the array containes all of the letter in the secound argument', ()=> {
 
-	// test
-	// console.log(mutation(["hello", "hey"]));
-	// console.log(mutation(["hello", "Hello"]));
-	// console.log(mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"]));
-	// console.log(mutation(["Mary", "Army"]));
-	// console.log(mutation(["Mary", "Aarmy"]));
-	// console.log(mutation(["Alien", "line"]));
-	// console.log(mutation(["floor", "for"]));
-	// console.log(mutation(["hello", "neo"]));
-	// console.log(mutation(["voodoo", "no"]));
+		function mutation(arr) {
+			arr.sort(function (a, b) {
+				return a.length - b.length;
+			});
 
-})();
+			return arr[0].toLowerCase().split('').every(function (x) {
+				if (arr[1].toLowerCase().indexOf(x) === -1) {
+					return false;
+				} else {
+					return true;
+				}
+			});
+		}
+
+		assert.equal(mutation(['hello', 'hey']), false);
+		assert.equal(mutation(['hello', 'Hello']), true);
+		assert.equal(mutation(['zyxwvutsrqponmlkjihgfedcba', 'qrstu']), true);
+		assert.equal(mutation(['Mary', 'Army']), true);
+		assert.equal(mutation(['Mary', 'Aarmy']), true);
+		assert.equal(mutation(['Alien', 'line']), true);
+		assert.equal(mutation(['floor', 'for']), true);
+		assert.equal(mutation(['hello', 'neo']), false);
+		assert.equal(mutation(['voodoo', 'no']), false);
+	});
+});

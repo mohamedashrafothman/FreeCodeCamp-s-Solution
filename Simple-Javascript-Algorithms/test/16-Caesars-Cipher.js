@@ -7,28 +7,29 @@
 	- All letters will be uppercase. Do not transform any non-alphabetic character (i.e. spaces, punctuation), 
 	  but do pass them on.
 */
+const assert = require('assert');
 
-(function(){
+describe('Ceaser Cipher', () => {
+	it('Shifts the letters by ceaser cipher', () => {
 
-	function rot13(str) { // LBH QVQ VG!
-		var new_str = "";
-		for(i=0; i<str.length; i++){
-	    	var code = str[i].charCodeAt();
-	    	if(code<65 || code>90){
-	      		new_str+=str[i];
-	    	}else if(code<=77){
-	      		new_str+=String.fromCharCode(code+13);
-	    	}else{
-	      		new_str+=String.fromCharCode(code-13);
-	    	}
-	  	}
-	  	return new_str;
-	}
+		function rot13(str) { // LBH QVQ VG!
+			var new_str = '';
+			for (i = 0; i < str.length; i++) {
+				var code = str[i].charCodeAt();
+				if (code < 65 || code > 90) {
+					new_str += str[i];
+				} else if (code <= 77) {
+					new_str += String.fromCharCode(code + 13);
+				} else {
+					new_str += String.fromCharCode(code - 13);
+				}
+			}
+			return new_str;
+		}
 
-	// test
-	// console.log(rot13("SERR PBQR PNZC")); 									//should return "FREE CODE CAMP"
-	// console.log(rot13("SERR CVMMN!")); 										//should return "FREE PIZZA!"
-	// console.log(rot13("SERR YBIR?")); 										//should return "FREE LOVE?"
-	// console.log(rot13("GUR DHVPX OEBJA QBT WHZCRQ BIRE GUR YNML SBK.")); 	//should return "THE QUICK BROWN DOG JUMPED OVER THE LAZY FOX."
-
-})();
+		assert.equal(rot13('SERR PBQR PNZC'), 'FREE CODE CAMP');
+		assert.equal(rot13('SERR CVMMN!'), 'FREE PIZZA!');
+		assert.equal(rot13('SERR YBIR?'), 'FREE LOVE?');
+		assert.equal(rot13('GUR DHVPX OEBJA QBT WHZCRQ BIRE GUR YNML SBK.'), 'THE QUICK BROWN DOG JUMPED OVER THE LAZY FOX.');
+	});
+});
