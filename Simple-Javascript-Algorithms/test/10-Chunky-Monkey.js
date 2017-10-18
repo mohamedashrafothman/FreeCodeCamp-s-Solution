@@ -17,30 +17,30 @@ describe('Chunk Monkey', () => {
 			return newArr;
 		}
 
-		// assert.equal(chunkArrayInGroups(['a', 'b', 'c', 'd'], 2), [
-		// 	['a', 'b'],
-		// 	['c', 'd']
-		// ]);
-		// assert.equal(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3), [
-		// 	[0, 1, 2],
-		// 	[3, 4, 5]
-		// ]);
-		// assert.equal(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2), [
-		// 	[0, 1],
-		// 	[2, 3],
-		// 	[4, 5]
-		// ]);
-		// assert.equal(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4), [
-		// 	[0, 1, 2, 3],
-		// 	[4, 5]
-		// ]);
-		// assert.equal(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3), [
-		// 	[0, 1, 2],
-		// 	[3, 4, 5]
-		// ]);
-		// assert.equal(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4), [
-		// 	[0, 1, 2, 3],
-		// 	[4, 5, 6, 7]
-		// ]);
+		assert.deepStrictEqual(chunkArrayInGroups(['a', 'b', 'c', 'd'], 2), [
+			['a', 'b'],
+			['c', 'd']
+		]);
+		assert.deepStrictEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3), [
+			[0, 1, 2],
+			[3, 4, 5]
+		]);
+		assert.deepStrictEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2), [
+			[0, 1],
+			[2, 3],
+			[4, 5]
+		]);
+		assert.deepStrictEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4), [
+			[0, 1, 2, 3],
+			[4, 5]
+		]);
+		assert.deepStrictEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3), [
+			[0, 1, 2],
+			[3, 4, 5]
+		]);
+		assert.deepStrictEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4), [
+			[0, 1, 2, 3],
+			[4, 5, 6, 7]
+		]);
 	});
 });

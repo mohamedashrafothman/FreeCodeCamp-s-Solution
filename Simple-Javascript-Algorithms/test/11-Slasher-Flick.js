@@ -11,12 +11,8 @@ describe('Slasher Flick', ()=> {
 			arr = arr.splice(0, howMany);
 			return arr;
 		}
-		// assert.equal(slasher([1,2,3,4,5,6,7,8,9], 2), [ 1 ,2 ]);
-		// assert.equal(slasher([1, 2, 3], 0), []);
-		// assert.equal(slasher([1, 2, 3], 9), );
-		// assert.equal(slasher([1, 2, 3], 4), );
-		// assert.equal(slasher(["burgers", "fries", "shake"], 1), );
-		// assert.equal(slasher([1, 2, "chicken", 3, "potatoes", "cheese", 4], 5), );
+		assert.deepStrictEqual(slasher([1,2,3,4,5,6,7,8,9], 2), [ 1 ,2 ]);
+		assert.deepStrictEqual(slasher([1, 2, 3], 0), []);
 	});
 });
 
